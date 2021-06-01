@@ -9,7 +9,6 @@ pipeline {
             steps {
 
                 echo "Building application..."
-                sh 'mvn -B -DskipTests clean package'
 
             }
 
