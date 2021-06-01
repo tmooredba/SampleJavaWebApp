@@ -46,21 +46,9 @@ pipeline {
 
     post {
 
-        always {
-
-            
-
-        }
-
         success {
 
             junit 'target/SampleJavaWebApp/**/*.xml'
-
-        }
-
-        failure {
-
-
 
         }
 
