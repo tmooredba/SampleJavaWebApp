@@ -2,6 +2,13 @@ pipeline {
 
     agent any
 
+    tools {
+
+        maven 'Maven 3.8.1'
+        jdk 'jdk-8u221'
+
+    }
+
     stages {
 
         stage('Build') { 
@@ -9,6 +16,7 @@ pipeline {
             steps {
 
                 echo "Building application..."
+                sh 'mvn -Dmaven.test.failure.ignore=true install'
 
             }
 
@@ -31,6 +39,28 @@ pipeline {
                 echo "Deploying application..."
 
             }
+
+        }
+
+    }
+
+    post {
+
+        always {
+
+            
+
+        }
+
+        success {
+
+            junit 'target/SampleJavaWebApp/**/*.xml'
+
+        }
+
+        failure {
+
+
 
         }
 
