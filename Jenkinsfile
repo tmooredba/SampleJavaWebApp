@@ -44,14 +44,4 @@ pipeline {
 
     }
 
-    post {
-
-        success {
-
-            junit 'target/SampleJavaWebApp/**/*.xml'
-
-        }
-
-    }
-
 }
