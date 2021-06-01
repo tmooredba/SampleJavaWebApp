@@ -10,7 +10,7 @@ pipeline {
 
             steps {
 
-                echo "Building project..."
+                echo "Building application..."
                 sh 'mvn -B -DskipTests clean package'
 
             }
@@ -21,6 +21,8 @@ pipeline {
 
             steps {
 
+                echo "Testing application..."
+
             }
 
         }
@@ -28,6 +30,8 @@ pipeline {
         stage('Deploy') { 
 
             steps {
+
+                echo "Deploying application..."
 
             }
 
